@@ -11,7 +11,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    permission_classes = (IsAuthenticated,)
+#     permission_classes = (IsAuthenticated,)
     serializer_class = serializers.UserSerializer
 
     def get_queryset(self):
@@ -24,7 +24,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     group view set
     """
-    permission_classes = (IsAuthenticated,)
+#     permission_classes = (IsAuthenticated,)
     serializer_class = serializers.GroupSerializer
 
     def get_queryset(self):
@@ -85,7 +85,7 @@ class BillViewSet(viewsets.ModelViewSet):
     """
     Bill view set
     """
-    permission_classes = (IsAuthenticated,)
+#     permission_classes = (IsAuthenticated,)
     serializer_class = serializers.BillSerializer
 
     def get_queryset(self):

@@ -1,0 +1,20 @@
+# Ignore generated directories
+venv
+/bin/
+/config/
+/lib/buildout/**
+
+# Ignore generated files
+*.sql
+*.pyc
+*.pyo
+*.orig
+out/
+src/*.egg-info
+
+# Ignore other specific files
+.coverage
+.project
+.pydevproject
+.pydevproject.bak
+src/db.sqlite3
