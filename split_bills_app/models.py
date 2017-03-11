@@ -13,7 +13,7 @@ class CustomUser(models.Model):
         verbose_name_plural = "CustomUsers"
 
     def __str__(self):
-        return str(self.name)
+        return str(self.username)
 
 class Group(models.Model):
     """
