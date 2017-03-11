@@ -3,15 +3,16 @@ from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework import status
-from split_bills_app.models import Group, Bill
+from split_bills_app.models import Group, Bill, CustomUser
 from rest_framework.response import Response
+from django.http import HttpResponseRedirect, HttpResponse
 
 
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-#     permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = serializers.UserSerializer
 
     def get_queryset(self):
@@ -19,6 +20,25 @@ class UserViewSet(viewsets.ModelViewSet):
         Return all users
         """
         return User.objects.all()
+
+    def create(self, request, *args):
+        user = request.data
+        new_user = User.objects.create(
+            username=user.get("username","None")
+        )
+        new_user.set_password(user.get("password","None"))
+        new_user.save()
+
+class CustomUserViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = serializers.CustomUserSerializer
+
+    def get_queryset(self):
+        return CustomUser.objects.all()
+
+    def create(self, request):
+        userdata = request.data
+        new_user = CustomUser(username=userdata.get("username","None"), password=userdata.get("password","None"))
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -172,7 +192,7 @@ class BillViewSet(viewsets.ModelViewSet):
         bill.split_between.clear()
 
         for member in members:
-            new_bill.split_between.add(member)
+            bill.split_between.add(member)
 
         bill.name = name
         bill.group = group

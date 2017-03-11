@@ -4,6 +4,17 @@ from django.db import models
 
 # Create your models here.
 
+class CustomUser(models.Model):
+    username = models.CharField(max_length=30, unique=True)
+    password = models.CharField(max_length=30)
+
+    class Meta:
+        db_table = "customusers"
+        verbose_name_plural = "CustomUsers"
+
+    def __str__(self):
+        return str(self.name)
+
 class Group(models.Model):
     """
     group table to store groups
