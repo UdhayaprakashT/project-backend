@@ -30,7 +30,7 @@ class UserViewSet(viewsets.ModelViewSet):
         new_user.save()
 
 class CustomUserViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = serializers.CustomUserSerializer
 
     def get_queryset(self):
