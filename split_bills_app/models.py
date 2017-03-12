@@ -20,7 +20,6 @@ class Group(models.Model):
     group table to store groups
     """
     name = models.CharField(max_length=30, unique=True)
-    description = models.CharField(max_length=200, null=True)
     members = models.ManyToManyField(CustomUser)
     class Meta:
         db_table = "groups"
