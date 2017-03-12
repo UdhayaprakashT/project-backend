@@ -34,10 +34,10 @@ class BillSerializer(serializers.ModelSerializer):
     """
     serializer class for Bill object
     """
-    split_between = UserSerializer(many=True)
-    paid_by = UserSerializer()
+    split_between = CustomUserSerializer(many=True)
+    paid_by = CustomUserSerializer()
     group = GroupSerializer()
 
     class Meta:
         model = Bill
-        fields = ('id','name', 'paid_by','split_between','group','amount')
+        fields = ('id','name', 'group', 'paid_by','split_between','amount')
