@@ -37,10 +37,10 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         return CustomUser.objects.all()
 
     def create(self, request, *args):
-        print(request.data.get('password'))
-        userdata = request.data
+        userdata = request.GET
         new_user = CustomUser(username=userdata.get("username","None"), password=userdata.get("password","None"))
         new_user.save()
+        return HttpResponseRedirect('/api/users')
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
