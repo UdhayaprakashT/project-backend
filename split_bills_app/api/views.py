@@ -40,7 +40,6 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         userdata = request.data
         new_user = CustomUser(username=userdata.get("username","None"), password=userdata.get("password","None"))
         new_user.save()
-        return Response(status=200)
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
