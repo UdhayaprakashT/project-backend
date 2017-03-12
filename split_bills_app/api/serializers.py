@@ -23,7 +23,7 @@ class GroupSerializer(serializers.ModelSerializer):
     """
     serializer class for Pay group object
     """
-    members = UserSerializer(many=True)
+    members = CustomUserSerializer(many=True)
 
     class Meta:
         model = Group

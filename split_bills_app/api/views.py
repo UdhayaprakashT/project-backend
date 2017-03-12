@@ -52,32 +52,33 @@ class GroupViewSet(viewsets.ModelViewSet):
         """
         Filter groups based on logged in user
         """
-        groups = []
-        groupname = self.request.query_params.get('groupname', None)
-        if groupname:
-            groups = Group.objects.filter(name=groupname)
-            if not groups:
-                raise Exception("Group - {} name not valid".format(groupname))
-        else:
-            groups = Group.objects.all()
-        return groups
+        return Group.objects.all()
+        # groups = []
+        # groupname = self.request.query_params.get('groupname', None)
+        # if groupname:
+        #     groups = Group.objects.filter(name=groupname)
+        #     if not groups:
+        #         raise Exception("Group - {} name not valid".format(groupname))
+        # else:
+        #     groups = Group.objects.all()
+        # return groups
 
-    def create(self, request):
-        """
-        Get the members from db based on requested group member set
-        Creat a Group
-        Add members to the group
-        """
-        group = request.data
-        users = []
-        for i in group['members']:
-            users.append(i['username'])
-        members = User.objects.filter(username__in=users)
-        new_group = Group(name=group['name'])
-        new_group.save()
-        for member in members:
-            new_group.members.add(member)
-            
+    # def create(self, request):
+    #     """
+    #     Get the members from db based on requested group member set
+    #     Creat a Group
+    #     Add members to the group
+    #     """
+    #     group = request.data
+    #     users = []
+    #     for i in group['members']:
+    #         users.append(i['username'])
+    #     members = CustomUser.objects.filter(username__in=users)
+    #     new_group = Group(name=group['name'])
+    #     new_group.save()
+    #     for member in members:
+    #         new_group.members.add(member)
+
     def update(self, request, *args, **kwargs):
         """
         Get the members from db based on requested group member set

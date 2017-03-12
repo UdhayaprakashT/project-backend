@@ -21,8 +21,7 @@ class Group(models.Model):
     """
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=200, null=True)
-    members = models.ManyToManyField(User)
-
+    members = models.ManyToManyField(CustomUser)
     class Meta:
         db_table = "groups"
         verbose_name_plural = "Groups"
