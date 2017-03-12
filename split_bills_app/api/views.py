@@ -37,7 +37,7 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         return CustomUser.objects.all()
 
     def create(self, request, *args):
-        userdata = request.POST
+        userdata = request.data
         new_user = CustomUser(username=userdata.get("username","None"), password=userdata.get("password","None"))
         new_user.save()
         return HttpResponseRedirect('/api/users')
