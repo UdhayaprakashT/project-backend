@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20185233-2ba8-41ac-a269-73cfc70b3dd7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/split_bills_app/api/serializers.py" afterPath="$PROJECT_DIR$/split_bills_app/api/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/split_bills_app/api/views.py" afterPath="$PROJECT_DIR$/split_bills_app/api/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/split_bills_app/models.py" afterPath="$PROJECT_DIR$/split_bills_app/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,8 +56,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/split_bills_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+            <state relative-caret-position="405">
+              <caret line="36" column="62" lean-forward="false" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -82,9 +80,9 @@
       <list>
         <option value="$PROJECT_DIR$/split_bills_app/admin.py" />
         <option value="$PROJECT_DIR$/split_bills_app/api/urls.py" />
-        <option value="$PROJECT_DIR$/split_bills_app/models.py" />
         <option value="$PROJECT_DIR$/split_bills_app/api/serializers.py" />
         <option value="$PROJECT_DIR$/split_bills_app/api/views.py" />
+        <option value="$PROJECT_DIR$/split_bills_app/models.py" />
       </list>
     </option>
   </component>
@@ -443,16 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/split_bills_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/split_bills_app/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -469,6 +457,16 @@
           <caret line="150" column="73" lean-forward="false" selection-start-line="150" selection-start-column="73" selection-end-line="150" selection-end-column="73" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/split_bills_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="36" column="62" lean-forward="false" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
