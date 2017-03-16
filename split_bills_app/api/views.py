@@ -132,8 +132,9 @@ class BillViewSet(viewsets.ModelViewSet):
         Creat a bill
         """
         bill = request.data
+        print(request.data)
         try:
-            paid_by = User.objects.get(username=bill['paid_by']['username'])
+            paid_by = CustomUser.objects.get(username=bill['paid_by']['username'])
         except Exception as ex:
             raise Exception("Paid by user - {} doesn't exists.".format(bill['paid_by']))
 
@@ -141,7 +142,7 @@ class BillViewSet(viewsets.ModelViewSet):
         for i in bill['split_between']:
             split_between.append(i['username'])
 
-        users = User.objects.filter(username__in=split_between)
+        users = CustomUser.objects.filter(username__in=split_between)
 
         try:
             group = Group.objects.get(name=bill['group']['name'])
@@ -177,7 +178,7 @@ class BillViewSet(viewsets.ModelViewSet):
         group = groups[0]
 
         try:
-            paid_by = User.objects.get(username=bill['paid_by']['username'])
+            paid_by = CustomUser.objects.get(username=bill['paid_by']['username'])
         except Exception as ex:
             raise Exception("Paid by user doesn't exists.")
 
@@ -189,7 +190,7 @@ class BillViewSet(viewsets.ModelViewSet):
         split_between = []
         for i in split_between:
             split_between.append(i['username'])
-        members = User.objects.filter(username__in=split_between)
+        members = CustomUser.objects.filter(username__in=split_between)
         bill.split_between.clear()
 
         for member in members:
