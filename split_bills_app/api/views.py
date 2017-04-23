@@ -149,7 +149,7 @@ class BillViewSet(viewsets.ModelViewSet):
         except Exception as ex:
             raise Exception("Bill group - {} doesn't exists.".format(bill['group']['name']))
 
-        new_bill = Bill(name=bill['name'], group=group, paid_by=paid_by, amount=bill['amount'])
+        new_bill = Bill(name=bill['name'], group=group, paid_by=paid_by, amount=bill['amount'], added_on=bill['added_on'])
         new_bill.save()
         for user in users:
             new_bill.split_between.add(user)
