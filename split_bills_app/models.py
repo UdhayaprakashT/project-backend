@@ -38,6 +38,7 @@ class Bill(models.Model):
     paid_by = models.ForeignKey(CustomUser, related_name='bill_paid_by', on_delete=models.CASCADE)
     split_between = models.ManyToManyField(CustomUser)
     amount = models.IntegerField(default=0)
+    added_on = models.DateField(null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now_add=True)
 

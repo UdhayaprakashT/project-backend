@@ -6,6 +6,7 @@ import unittest
 from django.core.urlresolvers import reverse
 from django.test.client import Client
 from django.contrib.auth.models import User
+from .models import CustomUser, Bill, Group
 
 # Create your tests here.
 class LoginTest(unittest.TestCase):
